@@ -48,7 +48,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="question2">Q2</label>
+                                <label for="question2">Q2 Summer is my fav season</label>
                                  <select class="form-control" id="q02" name="score02">
                                   <option>1</option>
                                   <option>2</option>
@@ -58,7 +58,7 @@
                                 </select>
                             </div>
                              <div class="form-group">
-                                <label for="question3">Q3 - In summer, Beach or the pool</label>
+                                <label for="question3">Q3 - I am a native reader</label>
                                  <select class="form-control" id="q03" name="score03">
                                   <option>1</option>
                                   <option>2</option>
@@ -68,7 +68,7 @@
                                 </select>
                             </div>
                              <div class="form-group">
-                                <label for="question4">Q4 - How do you like Disney movies</label>
+                                <label for="question4">Q4 - Very into Disney movies</label>
                                  <select class="form-control" id="q04" name="score04">
                                   <option>1</option>
                                   <option>2</option>
@@ -78,7 +78,7 @@
                                 </select>
                             </div>
                                    <div class="form-group">
-                                <label for="question5">Q5 - Coffee or tea?</label>
+                                <label for="question5">Q5 - I am a morning person</label>
                                  <select class="form-control" id="q05" name="score05">
                                   <option>1</option>
                                   <option>2</option>
@@ -88,7 +88,7 @@
                                 </select>
                             </div>
                                    <div class="form-group">
-                                <label for="question6">Q6 - Rainy or sunny day?</label>
+                                <label for="question6">Q6 - I love the rain</label>
                                  <select class="form-control" id="q06" name="score06">
                                    <option>1</option>
                                   <option>2</option>
@@ -98,7 +98,7 @@
                                 </select>
                             </div>
                                   <div class="form-group">
-                                <label for="question7">Q7 - How often do you frequent your friends?</label>
+                                <label for="question7">Q7 - I keep my friends close</label>
                                  <select class="form-control" id="q07" name="score07">
                                 <option>1</option>
                                   <option>2</option>
@@ -107,8 +107,8 @@
                                   <option>5</option>
                                 </select>
                             </div>
-                                   <div class="form-group">
-                                <label for="question8">Q8 - Rainy or sunny day?</label>
+                                   <div class="form-group">?
+                                <label for="question8">Q8 - I keep my enemies closer than my friends</label>
                                  <select class="form-control" id="q08" name="score08">
                                    <option>1</option>
                                   <option>2</option>
@@ -118,7 +118,7 @@
                                 </select>
                             </div>
                                    <div class="form-group">
-                                <label for="question9">Q9 - Rainy or sunny day?</label>
+                                <label for="question9">Q9 - I love my family</label>
                                  <select class="form-control" id="q09" name="score09">
                                   <option>1</option>
                                   <option>2</option>
@@ -128,7 +128,7 @@
                                 </select>
                             </div>
                                    <div class="form-group">
-                                <label for="question10">Q10 - Rainy or sunny day?</label>
+                                <label for="question10">Q10 - I am a pet person</label>
                                  <select class="form-control" id="q10" name="score10">
                                   <option>1</option>
                                   <option>2</option>
@@ -177,18 +177,19 @@
   crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-  $(".submit").on("click", function(){
+
+  $("#add-btn").on("click", function(){
 
     var newFriend = {
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
       scores: [$("#q01").val().trim(), $("#q02").val().trim(), $("#q03").val().trim(), $("#q04").val().trim(), $("#q05").val().trim(), $("#q06").val().trim(), $("#q07").val().trim(), $("#q08").val().trim(), $("#q09").val().trim(), $("#q10").val().trim(),]
-    };
+    }
     console.log(newFriend);
 
     var currentURL = window.location.origin;
 
-    $.post(currentURL + 'api/friends', newFriend, function(data){
+    $.post(currentURL + '/api/friends', newFriend, function(data){
 
       $("#matchedFriend").text(data.name);
       $("#matchedFriendImg").attr("src", data.photo);

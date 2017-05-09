@@ -20,8 +20,8 @@ module.exports = function(app) {
         var friendsToCompare = friendData[i]
         var differenceTotal = 0
 
-        for(var j=0;  j<friendsToCompare.scores.length; j++){
-        	var difference = Math.abs(friendsToCompare.score[j] - newFriend.scores[j]);
+        for(var k=0;  k < friendsToCompare.scores.length; k++){
+        	var difference = Math.abs(friendsToCompare.score[k] - newFriend.scores[k]);
         	differenceTotal  +=	difference;
         }
 
@@ -31,9 +31,9 @@ module.exports = function(app) {
     var matchFriendScore = differenceArr[0];
     var matchFriendIndex = 0;
 
-    for(var i=1; i<differenceArr.length; i++){
+    for(var i=1; i< differenceArr.length; i++){
         if(differenceArr[i] < matchFriendScore){
-            matchFriendScore= differenceArr[i];
+            matchFriendScore = differenceArr[i];
             matchFriendIndex = i;
         }
     }
